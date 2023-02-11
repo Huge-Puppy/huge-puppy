@@ -1,0 +1,20 @@
+{
+  "name": "huge-puppy-2",
+  "version": "1.0.0",
+  "description": "huge puppy's personal site",
+  "scripts": {
+    "start": "eleventy --serve",
+    "build": "NODE_ENV=production eleventy"
+  },
+  "keywords": [
+    "developer",
+    "personal site",
+    "huge puppy",
+    "jared lambert"
+  ],
+  "author": "huge puppy",
+  "license": "ISC",
+  "devDependencies": {
+    "@11ty/eleventy": "^2.0.0"
+  }
+}

@@ -1,0 +1,17 @@
+---
+layout: layouts/base.njk
+---
+
+<div class="wrapper home">
+  <div class="content">
+    {{ content | safe }}
+    <ul>
+      {%- for project in collections.projects -%}
+        <li{% if page.url == project.url %} aria-current="page"{% endif %}>{{ project.data.page.date | htmlDateString }} —
+	<a href='{{ project.url }}'>{{ project.data.title }}</a>
+	<p> {{ project.description }} </p>
+	</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>
