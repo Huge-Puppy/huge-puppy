@@ -1,7 +1,8 @@
 ---
-layout: layouts/base.njk
+layout: layouts/home.njk
+title: Jared Lambert
+subtitle: aka Huge Puppy
 ---
 
-<h1>Jared Lambert</h1>
-<p>*aka Jared Lambert*</p>
-<a href="/projects">projects</a>
+nothing of interest here.
+

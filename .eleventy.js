@@ -1,10 +1,8 @@
 const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
-  // Output directory: _site
 
-  // Copy `img/` to `_site/img`
-  eleventyConfig.addPassthroughCopy("public");
+  eleventyConfig.addPassthroughCopy("src/assets/images");
 
   eleventyConfig.addFilter("htmlDateString", dateObj => {
     return DateTime.fromJSDate(dateObj, { zone: "utc" }).toFormat("yyyy-LL-dd");
@@ -13,6 +11,11 @@ module.exports = function(eleventyConfig) {
   eleventyConfig.addCollection("projects", function(collection) {
     return collection.getFilteredByTag("projects");
   })
+
+  eleventyConfig.addCollection("goals", function(collection) {
+    return collection.getFilteredByTag("goals");
+  })
+
   return {
     dir: {
       input: "src",

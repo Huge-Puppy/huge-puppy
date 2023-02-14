@@ -1,0 +1,19 @@
+---
+layout: layouts/base.njk
+---
+
+<h1>Open Page!</h1>
+
+<div class="wrapper home">
+  <div class="content">
+    {{ content | safe }}
+    <ul>
+      {%- for goal in collections.goals -%}
+        <li{% if page.url == goal.url %} aria-current="page"{% endif %}>{{ goal.data.page.date | htmlDateString }} —
+	<a href='{{ goal.url }}'>{{ goal.data.title }}</a>
+	<p> {{ goal.description }} </p>
+	</li>
+      {%- endfor -%}
+    </ul>
+  </div>
+</div>

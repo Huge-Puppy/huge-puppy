@@ -3,6 +3,7 @@ title: Pumped
 description: Vision boards to create your mood
 date: 2022-10-01
 layout: layouts/project.njk
+progress: 1.0
 tags: 
   - projects
   - failed

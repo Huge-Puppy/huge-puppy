@@ -5,28 +5,34 @@
     <link rel="icon" href="/public/images/favicon.ico" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content="Huge Puppy wuz here" />
-    <link rel="stylesheet" type="text/css" href="/public/style.css" />
-  </head>
-  <body>
-  <main>
-  
-    {{ content | safe }}
+    <link rel="stylesheet" href="{{ '/assets/css/tailwind.css' | url }}">
+    <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 
-      <footer class="footer">
-        <div class="links">
-          <a href="/">Home</a>
+  </head>
+  <body class="bg-[#fefbea] p-7">
+    <main>
+      <div class="">
+    
+      {{ content | safe }}
+    
+      <footer class="fixed bottom-0 w-full pb-7">
+        <div class="w-3/4 text-xl flex justify-around">
+          <a class="hover:underline" href="/">Home</a>
           <span class="divider">|</span>
-          <a href="/open">Open</a>
+          <a  class="hover:underline" href="/open">Open</a>
           <span class="divider">|</span>
-          <a href="https://github.com/Huge-Puppy">Github</a>
+          <a  class="hover:underline" href="/projects">Projects</a>
           <span class="divider">|</span>
-          <a href="https://twitter.com/Huge_Puppy">Twitter</a>
+          <a class="hover:underline" href="https://github.com/Huge-Puppy">Github</a>
           <span class="divider">|</span>
-          <a href="https://www.strava.com/athletes/31939039">Strava</a>
+          <a class="hover:underline" href="https://twitter.com/Huge_Puppy">Twitter</a>
+          <span class="divider">|</span>
+          <a class="hover:underline" href="https://www.strava.com/athletes/31939039">Strava</a>
         </div>
       </footer>
     
-  </main>
+      </div>
+    </main>
    
   </body>
 </html>
