@@ -1,19 +1,40 @@
 ---
 layout: layouts/base.njk
 ---
+<script src="https://d3js.org/d3.v7.min.js"></script>
+<script type="text/javascript" src='/scripts/chart_tools.js'></script>
 
-<h1>Open Page!</h1>
-
-<div class="wrapper home">
-  <div class="content">
-    {{ content | safe }}
-    <ul>
-      {%- for goal in collections.goals -%}
-        <li{% if page.url == goal.url %} aria-current="page"{% endif %}>{{ goal.data.page.date | htmlDateString }} —
-	<a href='{{ goal.url }}'>{{ goal.data.title }}</a>
-	<p> {{ goal.description }} </p>
-	</li>
-      {%- endfor -%}
-    </ul>
+<div class="max-w-2xl content-center mx-auto">
+  <div class="text-right pb-10">
+    <h1 class="text-7xl font-mono">{{title}}</h1>
+    <h3 class="text-2xl italic font-sans">{{subtitle}}</h3>
   </div>
+
+      {{ content | safe }}
+      <h3>2023 Goals</h3>
+      <ul clas="pt-10">
+        {%- for goal in collections.goals -%}
+        <li> 	
+          <a href='{{ goal.url }}'>{{ goal.data.title }}</a>
+	  <div class="z-1 rounded-md border-4 h-8 w-32 border-black">
+	    <div class="
+	      {%- if goal.data.progress < 1 -%} {{'animate-pulse '}}
+	      {%- else -%} {{'w-full '}}
+	      {%- endif -%} 
+	      {%- if goal.data.progress >0.7 -%} {{'w-3/4 '}}
+	      {%- elif goal.data.progress >0.4 -%} {{'w-1/2 '}}
+	      {%- elif goal.data.progress >0.2 -%} {{'w-1/4 '}}
+	      {%- else -%} {{'w-[0.3rem] '}}
+	      {%- endif -%} 
+              relative -z-10 rounded-sm h-full bg-green-500">
+            </div>
+	  </div>
+  	  <p> {{ goal.description }} </p>
+  	</li>
+        {%- endfor -%}
+      </ul>
+      {%- for goal in collections.goals -%}
+      <h3 class="pt-10">{{goal.data.title}}</h3>
+        {{goal.templateContent | safe}}
+      {%- endfor -%}
 </div>

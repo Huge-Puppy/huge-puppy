@@ -1,5 +1,6 @@
 ---
 layout: layouts/projects.njk
+title: Projects
 ---
  
-# this is the projects page
+I make things

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="/public/images/favicon.ico" />
@@ -9,30 +9,38 @@
     <link rel="stylesheet" href="{{ '/assets/css/style.css' | url }}">
 
   </head>
-  <body class="bg-[#fefbea] p-7">
-    <main>
-      <div class="">
+  <body class="bg-[#fefbea] h-full">
+    <div class="min-h-full px-7 pt-7">
+    <main class="overflow-auto pb-[100px]">
     
       {{ content | safe }}
     
-      <footer class="fixed bottom-0 w-full pb-7">
-        <div class="w-3/4 text-xl flex justify-around">
-          <a class="hover:underline" href="/">Home</a>
-          <span class="divider">|</span>
-          <a  class="hover:underline" href="/open">Open</a>
-          <span class="divider">|</span>
-          <a  class="hover:underline" href="/projects">Projects</a>
-          <span class="divider">|</span>
-          <a class="hover:underline" href="https://github.com/Huge-Puppy">Github</a>
-          <span class="divider">|</span>
-          <a class="hover:underline" href="https://twitter.com/Huge_Puppy">Twitter</a>
-          <span class="divider">|</span>
-          <a class="hover:underline" href="https://www.strava.com/athletes/31939039">Strava</a>
-        </div>
-      </footer>
     
-      </div>
     </main>
-   
+    </div>
+    <footer class="-mt-[100px] relative w-full pl-7 pb-0 pt-0 h-[100px] clear-both flex items-center">
+      <div class="w-3/4 text-xl flex justify-around ">
+        <a class="hover:underline font-bold" href="/">Home</a>
+        <span class="divider">|</span>
+        <a  class="hover:underline font-bold" href="/open">Open</a>
+        <span class="divider">|</span>
+        <a  class="hover:underline font-bold" href="/projects">Projects</a>
+        <span class="divider">|</span>
+        <div class="flex">
+          <img class="w-8" src="{{ '/assets/images/links/github.png' | url }}">
+          <a class="pl-2 hover:underline" href="https://github.com/Huge-Puppy">Github</a>
+        </div>
+        <span class="divider">|</span>
+        <div class="flex">
+          <img class="w-8" src="{{ '/assets/images/links/twitter.png' | url }}">
+          <a class="pl-2 hover:underline" href="https://twitter.com/Huge_Puppy">Twitter</a>
+        </div>
+        <span class="divider">|</span>
+        <div class="flex">
+          <img class="w-8" src="{{ '/assets/images/links/strava.webp' | url }}">
+          <a class="pl-2 hover:underline" href="https://www.strava.com/athletes/31939039">Strava</a>
+        </div>
+      </div>
+    </footer>
   </body>
 </html>

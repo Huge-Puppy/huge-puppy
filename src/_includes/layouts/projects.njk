@@ -2,16 +2,45 @@
 layout: layouts/base.njk
 ---
 
-<div class="wrapper home">
-  <div class="content">
-    {{ content | safe }}
-    <ul>
+<div class="max-w-2xl content-center mx-auto">
+  <div class="wrapper home">
+    <div class="content">
+    <div class="text-right">
+    <h1 class="text-7xl font-mono">{{title}}</h1>
+      <h3 class="text-2xl italic font-sans">{{content | safe}}</h3>
+    </div>
+      <ul class="indent-0 ml-0">
+
       {%- for project in collections.projects -%}
-        <li{% if page.url == project.url %} aria-current="page"{% endif %}>{{ project.data.page.date | htmlDateString }} —
-	<a href='{{ project.url }}'>{{ project.data.title }}</a>
-	<p> {{ project.description }} </p>
+        <li class="list-none pt-10 indent-0 ">
+	<a class="flex items-center" href='{{ project.url }}'>
+  	  <div class="items-center justify-start" >
+	  <img class="object-cover w-24" src="{{ '/assets/images/'+project.data.title+'/logo.png' | url }}">
+	    <div class="z-1 rounded-md border-4 h-8 w-32 border-black">
+	      <div class="
+	      {%- if project.data.progress < 1 -%} {{'animate-pulse '}}
+	      {%- else -%} {{'w-full '}}
+	      {%- endif -%} 
+	      {%- if project.data.progress >0.7 -%} {{'w-3/4 '}}
+	      {%- elif project.data.progress >0.4 -%} {{'w-1/2 '}}
+	      {%- elif project.data.progress >0.2 -%} {{'w-1/4 '}}
+	      {%- else -%} {{'w-[1rem] '}}
+	      {%- endif -%} 
+	      relative -z-10 rounded-sm h-full bg-green-500"></div>
+	      </div>
+
+
+	</div>
+	<div class="pl-7">
+	    <div class="font-mono text-3xl">{{ project.data.title }}</div>
+	<div class="">{{ project.data.description }}</div>
+	  </div>
+	  </a>
+
 	</li>
       {%- endfor -%}
-    </ul>
+
+      </ul>
+    </div>
   </div>
 </div>

@@ -6,7 +6,7 @@
     "start": "npm-run-all -p dev:*",
     "dev:tailwind": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch --postcss",
     "dev:11ty": "eleventy --serve",
-    "build": "NODE_ENV=production eleventy && tailwindcss -i public/css/tailwind.css -o _site/public/tailwind.css --postcss"
+    "build": "python strava_data.py && NODE_ENV=production eleventy && tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --postcss"
   },
   "keywords": [
     "developer",
