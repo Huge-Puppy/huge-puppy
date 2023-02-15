@@ -7,7 +7,7 @@ layout: layouts/base.njk
     <div class="content">
       <div class="relative h-32">
       <a href="/">
-          <img class="absolute left-0 top-2 w-16" src={{'/assets/images/home.png' | url}}>
+          <img alt="home button" class="absolute left-0 top-2 w-16" src={{'/assets/images/home.webp' | url}}>
         </a>
         <h1 class="absolute top-4 right-0 opacity-70 text-7xl font-mono text-orange-500">{{title}}</h1>
         <h1 class="absolute top-3 right-1 opacity-70 text-7xl font-mono text-red-500">{{title}}</h1>
@@ -22,7 +22,7 @@ layout: layouts/base.njk
         <li class="list-none pt-10 indent-0">
 	<a class="flex items-center" href='{{ project.url }}'>
   	  <div class="items-center justify-start" >
-	  <img class="object-cover w-24" src="{{ '/assets/images/'+project.data.title+'/logo.png' | url }}">
+	  <img alt="{{project.data.title}} logo" class="object-cover w-24" src="{{ '/assets/images/'+project.data.title+'/logo.webp' | url }}">
 	    <div class="z-1 rounded-md border-4 h-8 w-32 border-black">
 	      <div class="
 
