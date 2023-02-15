@@ -2,7 +2,7 @@
 title: Whatado
 description: A mobile app for finding things to do and people to do them with.
 date: 2022-10-01
-progress: 1.0
+health: 0.0
 layout: layouts/project.njk
 tags: 
   - projects

@@ -4,35 +4,52 @@ layout: layouts/base.njk
 
 <div class="max-w-4xl mx-auto">
     <div class="text-right">
-      <h1 class="text-7xl font-mono">{{title}}</h1>
-      <h3 class="text-2xl italic font-sans">{{subtitle}}</h3>
+      <div class="relative h-32">
+        <h1 class="absolute top-4 right-0 opacity-70 text-7xl font-mono text-orange-500">{{title}}</h1>
+        <h1 class="absolute top-3 right-1 opacity-70 text-7xl font-mono text-red-500">{{title}}</h1>
+        <h1 class="absolute top-2 right-2 opacity-70 text-7xl font-mono text-purple-500">{{title}}</h1>
+        <h1 class="absolute top-1 right-3 opacity-70 text-7xl font-mono text-blue-500">{{title}}</h1>
+        <h1 class="absolute top-0 right-4 opacity-70 text-7xl font-mono text-black-100">{{title}}</h1>
+	<h3 class="absolute top-16 right-0 text-2xl italic font-sans ">{{subtitle}}</h3>
+      </div>
     </div>
     <div class="flex justify-between">
       <div class="">
         {{ content | safe }}
       </div>
     <ul class="text-right pt-10 indent-0 ml-0">
+      {%- set colors = ['bg-orange-500', 'bg-red-500', 'bg-purple-500', 'bg-blue-500'] -%}
+      {%- set counter = 0 -%}
       {%- for project in collections.projects -%}
-        <li class="list-none">
-	<a class="items-center origin-right group duration-500 hover:scale-[1.5] inline-flex " href='{{ project.url }}'>
-	  <img class="object-cover w-24 p-2" src="{{ '/assets/images/'+project.data.title+'/logo.png' | url }}">
-	  <div class="pl-7">
-	    <div class="font-mono text-3xl inline-block">{{ project.data.title }}</div>
-	    <div class="z-1 rounded-md border-4 h-8 w-32 border-black">
-	      <div class="
-	      {%- if project.data.progress < 1 -%} {{'animate-pulse '}}
-	      {%- else -%} {{'w-full '}}
-	      {%- endif -%} 
-	      {%- if project.data.progress >0.7 -%} {{'w-3/4 '}}
-	      {%- elif project.data.progress >0.4 -%} {{'w-1/2 '}}
-	      {%- elif project.data.progress >0.2 -%} {{'w-1/4 '}}
-	      {%- else -%} {{'w-[1rem] '}}
-	      {%- endif -%} 
-	      relative -z-10 rounded-sm h-full bg-green-500"></div>
-	    </div>
+
+      <li class="list-none my-5 relative group origin-right duration-500 hover:scale-[1.5]">
+        <div class=" absolute h-full w-full {{colors[counter]}} opacity-40 rounded-2xl "> </div>
+        <div class="relative  px-10">
+  	<a class="items-center  inline-flex " href='{{ project.url }}'>
+  	  <img class="object-cover w-24 p-2" src="{{ '/assets/images/'+project.data.title+'/logo.png' | url }}">
+  	  <div class="pl-7">
+  	    <div class="font-mono text-3xl inline-block">{{ project.data.title }}</div>
+  	    <div class="z-20 rounded-md border-4 h-8 w-32 border-black">
+  	      <div class="bg-[#fefbea] w-full h-full rounded-md">
+  	      <div class="
+  	      {%- if project.data.health < 1 -%} {{'animate-pulse '}}
+              {%- elif project.data.health >= 1 -%} {{'w-full '}}
+  	      {%- endif -%} 
+  	      {%- if project.data.health >0.7 -%} {{'w-3/4 bg-green-500 '}}
+  	      {%- elif project.data.health >0.6 -%} {{'w-[60%] bg-green-500 '}}
+  	      {%- elif project.data.health >0.4 -%} {{'w-1/2 bg-yellow-500 '}}
+  	      {%- elif project.data.health >0.3 -%} {{'w-1/4 bg-yellow-500 '}}
+              {%- elif project.data.health > 0.0 -%} {{'w-[0.5rem] bg-red-500 '}}
+              {%- else  -%} {{'w-0 bg-red-500 '}}
+  	      {%- endif -%} 
+  	      relative z-10 rounded-sm h-full"></div>
+  	      </div>
+  	      </div>
+  	    </div>
+  	  </a>
 	  </div>
-	</a>
 	</li>
+	{%- set counter = (counter + 1) % colors|length -%}
       {%- endfor -%}
     </ul>
     </div>

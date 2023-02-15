@@ -5,10 +5,14 @@ layout: layouts/base.njk
 <script type="text/javascript" src='/scripts/chart_tools.js'></script>
 
 <div class="max-w-2xl content-center mx-auto">
-  <div class="text-right pb-10">
-    <h1 class="text-7xl font-mono">{{title}}</h1>
-    <h3 class="text-2xl italic font-sans">{{subtitle}}</h3>
-  </div>
+      <div class="relative h-32">
+        <h1 class="absolute top-4 right-0 opacity-70 text-7xl font-mono text-orange-500">{{title}}</h1>
+        <h1 class="absolute top-3 right-1 opacity-70 text-7xl font-mono text-red-500">{{title}}</h1>
+        <h1 class="absolute top-2 right-2 opacity-70 text-7xl font-mono text-purple-500">{{title}}</h1>
+        <h1 class="absolute top-1 right-3 opacity-70 text-7xl font-mono text-blue-500">{{title}}</h1>
+        <h1 class="absolute top-0 right-4 opacity-70 text-7xl font-mono text-black-100">{{title}}</h1>
+	<h3 class="absolute top-16 right-0 text-2xl italic font-sans ">{{subtitle}}</h3>
+      </div>
 
       {{ content | safe }}
       <h3>2023 Goals</h3>

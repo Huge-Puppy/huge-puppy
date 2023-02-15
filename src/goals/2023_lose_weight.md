@@ -10,7 +10,6 @@ tags:
 
 Starting weight 250 at some point, but lately hovering between 235-245. The reason I have this goal is because I am happier when I am phsyically fit, and I believe this body is a gift that I'm meant to take care of. I'm competitive, and I still want to make athletic achievements in my late 20's.
 
-TODO: insert graph here in html ***gasp***
 <div class="mx-auto w-[600px] h-[500px]" id="weight-graph"></div>
 <script type="text/javascript" src='/scripts/2023_graphs/weight.js'></script>
 

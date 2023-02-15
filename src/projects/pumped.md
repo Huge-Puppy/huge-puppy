@@ -3,10 +3,10 @@ title: Pumped
 description: Vision boards to create your mood
 date: 2022-10-01
 layout: layouts/project.njk
-progress: 1.0
+health: 0.61
 tags: 
   - projects
-  - failed
+  - current
 ---
 
 Pumped is an app where you can create vision boards as slide shows and set them to music. Custom alarms will remind you to view the slideshow at specific times during the day. The idea is that you watch the slide show right before your planned daily activities to create motivation. So many people lay in bed in the morning regret their decision to work out the previous night, but we choose our emotions. Pumped powers you up to choose the right emotions when you need them. This was a product that I really wanted, and I figured others would like it as well. 

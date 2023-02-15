@@ -1,12 +1,12 @@
 ---
-title: Whatado
+title: SLC_Flights
 description: A mobile app for finding things to do and people to do them with.
 date: 2022-10-01
-progress: 0.1
+health: 1.0
 layout: layouts/project.njk
 tags: 
   - projects
-  - failed
+  - current
 ---
 
 Whatado aimed at connecting people who have a hard time meeting new friends or finding things to do. You would create an event for something you wanted to do or something you were planning, and other people could indicate that they wanted to come with you. 

@@ -10,4 +10,4 @@ tags:
 
 Because I know that my skillset can produce this level of value, and I want to push myself to achieve more than I currently am. 
 
-TODO: insert graph here in html ***gasp***
+*data to follow*
