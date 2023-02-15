@@ -6,12 +6,15 @@ layout: layouts/base.njk
   <div class="wrapper home">
     <div class="content">
       <div class="relative h-32">
+      <a href="/">
+          <img class="absolute left-0 top-2 w-16" src={{'/assets/images/home.png' | url}}>
+        </a>
         <h1 class="absolute top-4 right-0 opacity-70 text-7xl font-mono text-orange-500">{{title}}</h1>
         <h1 class="absolute top-3 right-1 opacity-70 text-7xl font-mono text-red-500">{{title}}</h1>
         <h1 class="absolute top-2 right-2 opacity-70 text-7xl font-mono text-purple-500">{{title}}</h1>
         <h1 class="absolute top-1 right-3 opacity-70 text-7xl font-mono text-blue-500">{{title}}</h1>
         <h1 class="absolute top-0 right-4 opacity-70 text-7xl font-mono text-black-100">{{title}}</h1>
-	<h3 class="absolute top-16 right-0 text-2xl italic font-sans ">{{content | safe}}</h3>
+	<h3 class="absolute top-10 right-0 text-2xl italic font-sans ">{{content | safe}}</h3>
       </div>
 
       <ul class="indent-0 ml-0">

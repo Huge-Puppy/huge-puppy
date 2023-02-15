@@ -2,7 +2,7 @@
 layout: layouts/goal.njk
 title: Get a temple recommend
 date: 2023-04-01
-progress: 0.25
+progress: 0.5
 tags: 
   - goals
   - current
