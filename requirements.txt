@@ -16,8 +16,6 @@ certifi==2022.12.7
 cffi==1.14.5
 chardet==4.0.0
 click==8.0.4
-conda==23.1.0
-conda-package-handling==1.7.3
 cryptography==3.4.7
 cycler==0.11.0
 cytoolz==0.11.0
@@ -111,7 +109,6 @@ regex==2022.8.17
 requests==2.25.1
 ruamel.yaml==0.17.21
 ruamel.yaml.clib==0.2.6
-ruamel-yaml-conda==0.15.100
 sacremoses==0.0.43
 scipy==1.7.3
 Send2Trash==1.8.0
