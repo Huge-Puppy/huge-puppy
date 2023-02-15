@@ -12,11 +12,11 @@ layout: layouts/base.njk
 
       {{ content | safe }}
       <h3>2023 Goals</h3>
-      <ul clas="pt-10">
+      <ul class="ml-0 indent-0">
         {%- for goal in collections.goals -%}
-        <li> 	
+        <li class="list-none"> 	
           <a href='{{ goal.url }}'>{{ goal.data.title }}</a>
-	  <div class="z-1 rounded-md border-4 h-8 w-32 border-black">
+	  <div class="z-1 rounded-md border-4 h-8 w-[100%] border-black">
 	    <div class="
 	      {%- if goal.data.progress < 1 -%} {{'animate-pulse '}}
 	      {%- else -%} {{'w-full '}}

@@ -66,7 +66,7 @@ d3.csv('/data/weight.csv').then((data) => {
     .attr("text-anchor", "end")
     .attr("x", 600 / 2)
     .attr("y", 490)
-    .text("Year");
+    .text("Month");
 
   s_svg.append("text")
     .attr("text-anchor", "end")
@@ -74,7 +74,7 @@ d3.csv('/data/weight.csv').then((data) => {
     .attr("x", -250)
     .attr("dy", ".75em")
     .attr("transform", "rotate(-90)")
-    .text("Weight");
+    .text("Weight (lbs)");
 
     // Add the line chart
     s_g.append('path')

@@ -14,5 +14,5 @@ TODO: insert graph here in html ***gasp***
 <div class="mx-auto w-[600px] h-[500px]" id="weight-graph"></div>
 <script type="text/javascript" src='/scripts/2023_graphs/weight.js'></script>
 
-<div class="mx-auto w-[600px] h-[500px]" id="strava-graph"></div>
+<div class="pt-10 mx-auto w-[600px] h-[500px]" id="strava-graph"></div>
 <script type="text/javascript" src='/scripts/strava.js'></script>
