@@ -4,8 +4,8 @@ layout: layouts/base.njk
 <script src="https://d3js.org/d3.v7.min.js"></script>
 <script type="text/javascript" src='/scripts/chart_tools.js'></script>
 
-<div class="max-w-2xl content-center mx-auto">
-      <div class="relative h-32">
+<div class="max-w-2xl content-center mx-auto overflow-hidden">
+      <div class="relative h-32 text-right">
         <a href="/">
           <img alt="home button" class="absolute left-0 top-2 w-16" src={{'/assets/images/home.webp' | url}}>
         </a>
@@ -14,10 +14,10 @@ layout: layouts/base.njk
         <h1 class="absolute top-2 right-2 opacity-70 text-7xl font-mono text-purple-500">{{title}}</h1>
         <h1 class="absolute top-1 right-3 opacity-70 text-7xl font-mono text-blue-500">{{title}}</h1>
         <h1 class="absolute top-0 right-4 opacity-70 text-7xl font-mono text-black-100">{{title}}</h1>
-	<h3 class="absolute top-16 right-0 text-2xl italic font-sans ">{{subtitle}}</h3>
+	<h3 class="absolute top-36 lg:top-16 right-0 text-2xl italic font-sans ">{{subtitle}}</h3>
       </div>
 
-      <div class="pb-7">
+      <div class="pb-7 pt-12 lg:pt-0">
       {{ content | safe }}
       </div>
       <h3>2023 Goals</h3>

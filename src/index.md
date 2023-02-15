@@ -4,7 +4,7 @@ title: Jared Lambert
 subtitle: aka HugePuppy
 ---
 
-<pre>
+<pre class="max-w-full overflow-hidden lg:overflow-visible">
               _.--""`-..
             ,'          `.
           ,'          __  `.

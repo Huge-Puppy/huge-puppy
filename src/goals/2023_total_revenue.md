@@ -1,6 +1,6 @@
 ---
 layout: layouts/goal.njk
-title: Make $100,000 this year
+title: Make $100,000
 date: 2023-12-31
 progress: 0.2
 tags: 
