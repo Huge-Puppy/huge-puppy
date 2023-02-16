@@ -1,7 +1,10 @@
 /* grab strava data and create graph from strava data */
 
 // Set the scales for the x and y axes
- const w_xScale = d3.scaleTime().range([0, 500]);
+let w_width = window.screen.width > 600 ? 500 : Math.min(window.screen.width - 100, 500);
+let w_margin = 50;
+
+ const w_xScale = d3.scaleTime().range([0, w_width]);
 //const w_xScale = d3.scaleBand().range([0, 500]).padding(0.05)
 const w_yScale = d3.scaleLinear().range([400, 0]);
 const w_yScale2 = d3.scaleLinear().range([400, 0]);
@@ -13,8 +16,9 @@ const w_yScale2 = d3.scaleLinear().range([400, 0]);
 
 let w_svg = d3.select('#strava-graph')
   .append('svg')
-  .attr('width', 600)
-  .attr('height', 500);
+  .attr('width', w_width + 2*w_margin)
+  .attr('height', 500)
+  .attr('class', 'mx-auto')
 
 const w_line = d3.line()
   .x(d => w_xScale(d.date))
@@ -23,7 +27,7 @@ const w_line = d3.line()
 
 // Create the SVG element
 var w_g = w_svg.append("g")
-    .attr("transform", "translate(50,50)");
+    .attr("transform", `translate(${w_margin},${w_margin})`);
 
 d3.csv('/data/strava.csv').then((data) => { 
   data = data.filter(d => stravaParseTime(d.date) >= parseTime('2023-1-1'));
@@ -67,7 +71,7 @@ d3.csv('/data/strava.csv').then((data) => {
       .call(d3.axisRight(w_yScale2).tickFormat(function (d) {
       return d;
     }).ticks(13))
-  .attr('transform', 'translate(500,0)')
+  .attr('transform', `translate(${w_width},0)`)
     .append("text")
     .attr("y", 6)
     .attr("dy", "1rem")
@@ -78,7 +82,7 @@ d3.csv('/data/strava.csv').then((data) => {
     //add axis labels
   w_svg.append("text")
     .attr("text-anchor", "end")
-    .attr("x", 600 / 2)
+    .attr("x", (w_width + 2*w_margin) / 2)
     .attr("y", 490)
     .text("Month");
 
@@ -93,7 +97,7 @@ d3.csv('/data/strava.csv').then((data) => {
 
   w_svg.append("text")
     .attr("text-anchor", "end")
-    .attr("y", -600)
+    .attr("y", -(w_width + 2*w_margin))
     .attr("x", 300)
   .attr("fill", "darkred")
     .attr("dy", ".75em")
@@ -132,7 +136,7 @@ d3.csv('/data/strava.csv').then((data) => {
 
   //add title
   w_svg.append("text")
-    .attr("x", (600 / 2))
+    .attr("x", (w_width + 2*w_margin)/ 2)
     .attr("y", 40)
     .attr("text-anchor", "middle")
     .style("font-size", "20px")

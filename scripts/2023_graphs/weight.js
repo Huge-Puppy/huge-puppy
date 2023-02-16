@@ -2,7 +2,13 @@
 
 // Set the scales for the x and y axes
 // const s_xScale = d3.scaleTime().range([DateTime(2007,4,23), Date(2012,6,1)]);
-const s_xScale = d3.scaleTime().range([0, 500])
+let s_width = window.screen.width >= 600 ? 500 : Math.min(window.screen.width-100, 500);
+let s_margin = 50;
+
+console.log(s_width);
+console.log(s_margin);
+
+const s_xScale = d3.scaleTime().range([0, s_width])
 const s_yScale = d3.scaleLinear().range([400, 0]);
 
 // Create the line generator
@@ -12,12 +18,13 @@ const s_line = d3.line()
 
 let s_svg = d3.select('#weight-graph')
   .append('svg')
-  .attr('width', 600)
-  .attr('height', 500);
+  .attr('width', s_width + 2*s_margin)
+  .attr('height', 500)
+  .attr('class', 'mx-auto')
 
   //add title
   s_svg.append("text")
-    .attr("x", (600 / 2))
+    .attr("x", ((s_width+2*s_margin) / 2))
     .attr("y", 80)
     .attr("text-anchor", "middle")
     .style("font-size", "20px")
@@ -25,7 +32,7 @@ let s_svg = d3.select('#weight-graph')
 
 // Create the SVG element
 var s_g = s_svg.append("g")
-    .attr("transform", "translate(50,50)");
+    .attr("transform", `translate(${s_margin},${s_margin})`);
 
 d3.csv('/data/weight.csv').then((data) => { 
   data.forEach((d) => {
@@ -64,7 +71,7 @@ d3.csv('/data/weight.csv').then((data) => {
     //add axis labels
   s_svg.append("text")
     .attr("text-anchor", "end")
-    .attr("x", 600 / 2)
+    .attr("x", (s_width + 2*s_margin )/ 2)
     .attr("y", 490)
     .text("Month");
 
@@ -89,7 +96,7 @@ d3.csv('/data/weight.csv').then((data) => {
   s_g.append('line')
     .attr('class', 'dotted-line')
     .attr('x1', 0)
-    .attr('x2', 500)
+    .attr('x2', s_width)
     .attr('y1', s_yScale(195))
     .attr('y2', s_yScale(195))
 
