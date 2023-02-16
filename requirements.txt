@@ -32,7 +32,6 @@ fastjsonschema==2.15.1
 filelock==3.8.0
 fonttools==4.33.3
 future==0.18.2
-huggingface-hub==0.9.1
 ic-py==1.0.0
 idna==2.10
 importlib-metadata==4.12.0
