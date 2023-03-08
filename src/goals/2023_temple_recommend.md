@@ -1,12 +1,12 @@
 ---
 layout: layouts/goal.njk
-title: Get a temple recommend
+title: Go to the temple
 date: 2023-04-01
-progress: 0.5
+progress: 0.8
 tags: 
   - goals
   - current
 ---
 
-In my religion (The Church of Jesus Christ of Latter-Day Saints) we build sacred places of worship called temples, and you need be worthy to attend (by following the commandments). I haven't been able to attend for a few years because of my porn habit. This goal is about breaking the habit and taking something negative out of my life.
+In my religion (The Church of Jesus Christ of Latter-Day Saints) we build sacred places of worship called temples. I haven't been for a while, so I'm going to make it there before April!
 
