@@ -2,7 +2,7 @@
 layout: layouts/goal.njk
 title: Weigh 195 lbs
 date: 2023-07-02
-progress: 0.21
+progress: 0.46
 tags: 
   - goals
   - current
