@@ -4,7 +4,6 @@ module.exports = function(eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy("src/assets/images");
   eleventyConfig.addPassthroughCopy("data");
-  eleventyConfig.addPassthroughCopy("scripts");
   eleventyConfig.addPassthroughCopy("src/assets/css/style.css");
 
   eleventyConfig.addFilter("htmlDateString", dateObj => {
@@ -12,11 +11,13 @@ module.exports = function(eleventyConfig) {
   });
 
   eleventyConfig.addCollection("projects", function(collection) {
-    return collection.getFilteredByTag("projects");
-  })
-
-  eleventyConfig.addCollection("goals", function(collection) {
-    return collection.getFilteredByTag("goals");
+    return collection.getFilteredByTag("projects").sort((a, b) => {
+      if (a.data.date < b.data.date) {
+        return 1;
+      } else {
+        return -1;
+      }
+    });
   })
 
   return {

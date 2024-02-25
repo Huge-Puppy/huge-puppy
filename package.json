@@ -6,11 +6,13 @@
     "start": "npm-run-all -p dev:*",
     "dev:tailwind": "tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --watch --postcss",
     "dev:11ty": "eleventy --serve",
-    "build": "python strava_data.py && NODE_ENV=production eleventy && tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --postcss"
+    "build": "NODE_ENV=production eleventy && tailwindcss -i src/assets/css/tailwind.css -o _site/assets/css/tailwind.css --postcss"
   },
   "keywords": [
-    "developer",
-    "personal site",
+    "space-age minimalist",
+    "destroyer of worlds",
+    "techno-savior",
+    "atlantian prince",
     "huge puppy",
     "jared lambert"
   ],
